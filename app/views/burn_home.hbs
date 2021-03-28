@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Behind the Screen</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" 
+      type="image/png" 
+      href="https://cdn.glitch.com/9c32f8b3-9d28-40a9-84d2-7cae4d57f6df%2FBehind%20the%20screen%20(1).png?v=1616946404652"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.0"> </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>  
+  <body>
+    <header><h1>Behind the Screen</h1></header>
+    
+    <p>
+      <b>Employee burnout</b> is on the rise. When workers feel physically or emotionally exhausted, they're not able to participate fully in the workplace
+      or even at home.
+    </p>
+    
+    <h2>Social Implications</h2>
+    
+      <p>
+        A <a href="https://www.gallup.com/workplace/237059/employee-burnout-part-main-causes.aspx"><b>2018 Gallup poll</b></a> found astounding consequences for employee burnout. 
+        Employees who say they very often or always experience burnout at work are:  
+        <ul>
+          <li>13% less confident in their performance</li>
+          <li>Half as likely to discuss how to approach performance goals with their manager</li>
+          <li>2.6 times as likely to leave their current employer </li>
+          <li>63% more likely to take a sick day</li>
+          <li>23% more likely to visit the emergency room</li>
+          
+          
+        </ul>
+      </p>
+  
+  
+    <p>Social distancing and work-from-home guidelines have only exacerbated issues of mental health amid rising feelings of distress, likely stemming from people’s limited social interactions, tensions among families in lockdown together, and fear of illness. 
+      Therefore, now more than ever before, it’s important that we have a means of identifying symptoms of mental health issues.
+    </p>
+    
+         
+    <h2 id="demo">Estimate Burnout</h2>
+      <p>
+      With scikit-learn’s DecisionTreeRegressor, our project predicts the employee burnout on a scale from 0-1 given three features: 
+        seniority in their respective institution on a scale from 0-5, 
+        the amount of resources allocated to the employee to work (i.e. number of working hours) on a scale from 1-10, 
+        and a self-reported mental fatigue score on a scale from 0-10.
+      The output prediction is presented on a Glitch-website along 
+      with a graph plotting mental fatigue score vs. burn rate. </p>
+
+    <div class="settings" id="demo-content">
+      
+      <div class="input-container formula">
+        <b>Designation (Seniority): </b> <input name = "input_designation" type="number"> <br> <br>    
+        <b id="centerThis"> Resource Allocation: </b> <input name  = "input_resource_allocation" type="number"><br><br>  
+        <b id="centerThis"> Mental Fatigue Score: </b> <input name  = "input_mental_fatigue_score" type="number"><br><br>  
+      </div> 
+      <br>
+      
+      <center><button  onclick="submit_input()">Calculate Burn Rate</button></center>
+    </div>
+  
+    <br>
+     <div class="settings" id="demo-content">      
+      <div class="input-container formula">
+        <b id="predictedSalt">Predicted burn rate (0-1): </b>
+      </div>
+    </div>
+   
+    
+    <h2>Graph</h2>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <canvas id="ourGraph" width="800" height="450"></canvas>
+
+    
+    <h2>How does this work?</h2>
+      <p>
+        We used <a href="https://www.kaggle.com/blurredmachine/are-your-employees-burning-out"><b>HackerEarth's Burn Rate Dataset</b></a>, 
+        which contains data collected during research on employee burnout. Take a look at what happens behind-the-screen:
+
+        <ol>
+          <li>We treat this data as our training data, and use it train a decision tree regressor, a type of machine learning algorithm.
+            Check out more about Scikit-learn's awesome <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor"> decision tree regressors.</a></li>
+          <li>Next, we read in the user's three input parameters: Designation (Seniority), Resource Allocation (i.e. number of working hours), and Mental Fatigue Score. </li>
+          <li>Then to generate a prediction of this employee's burnout rate, we put these inputs into the decision tree, which hands us back its best prediction. </li>
+          <li>And all that's left is to display the result to the webpage!</li>
+        </ol>
+      </p>
+
+    <h2>The code</h2>
+    <p>You can learn more about our project and take a closer look at the code <a href="https://github.com/SriMed/SlowBurn">here on GitHub</a>.</p>
+
+    <script src="https://button.glitch.me/button.js"></script>
+    <script type="text/javascript" src="client-js/home.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <h2>made with <i class="icon fa fa-heart"></i></h2>
+    <p>Khushmeet Chandi, Mitali Gandhe, and Srilakshmi Medarametla</p>
+    <br>
+  </body>
+</html>

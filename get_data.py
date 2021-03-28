@@ -21,6 +21,5 @@ data_dict["Resource_Allocation"] = resource
 burn = list(df["Burn Rate"])
 data_dict["Burn_Rate"] = burn
 
-
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(data_dict, f, ensure_ascii=False, indent=4)
