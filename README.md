@@ -8,4 +8,4 @@ Special thanks to HackerEarth, `“Are Your Employees Burning Out?” Kaggle, 20
 Srilakshmi Medarametla, Mitali Gandhe, Khushmeet Chandi
 
 # Links
-[HooHacks 2021](https://devpost.com/software/steady-burn)
+Submitted to [HooHacks 2021](https://devpost.com/software/steady-burn)
