@@ -4,8 +4,8 @@ With scikit-learn’s `DecisionTreeRegressor`, our project predicts the employee
 
 Special thanks to HackerEarth, `“Are Your Employees Burning Out?” Kaggle, 2020, doi: 10.34740/KAGGLE/DS/949779` for the dataset.
 
-#Credits
+# Credits
 Srilakshmi Medarametla, Mitali Gandhe, Khushmeet Chandi
 
-#Links
+# Links
 [HooHacks 2021](https://devpost.com/software/steady-burn)
